@@ -100,7 +100,7 @@ test_cfg = dict(
 )
 # dataset settings
 dataset_type = 'MyDataset'
-data_root = '/content/BloodCell/'
+data_root = '/content/data/VOC2007/ImageSets/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -138,7 +138,7 @@ data = dict(
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'val.txt',
+        ann_file=data_root + 'train.txt',
         img_prefix=data_root ,
         pipeline=test_pipeline),
     test=dict(
